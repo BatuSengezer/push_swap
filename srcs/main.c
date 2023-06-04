@@ -22,7 +22,7 @@ int main(int ac, char **av)
     printf("before swap:\n");
     while(current_a != NULL)
     {
-        printf("a value, position is:%d, %d\n",current_a->val, current_a->pos);
+        printf("a value, position, sorted_pos is:%d, %d, %d\n",current_a->val, current_a->pos, current_a->sorted_pos);
         current_a = current_a->next;
     }
     swap_a(&stack_a);
@@ -30,7 +30,7 @@ int main(int ac, char **av)
     printf("after swap:\n");
     while(head_a != NULL)
     {
-        printf("a value, position is: %d, %d\n",head_a->val, head_a->pos);
+        printf("a value, position, sorted pos  is: %d, %d, %d\n",head_a->val, head_a->pos, head_a->sorted_pos);
         head_a = head_a->next;
     }
     printf("sort_check: %d\n",sorted_check(stack_a));

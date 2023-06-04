@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:14 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/04 15:01:17 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/04 17:04:32 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,11 @@ void write_error(void);
 
 // util functions
 long int	ft_atol(const char *str);
-
+int find_highest(t_stack *stack);
 
 
 //sort functions
-
+void sorted_pos(t_stack *stack);
 int sorted_check(t_stack *stack);
 void sort_three(t_stack **stack_a);
 
@@ -63,6 +63,5 @@ void push_b(t_stack **stack_a, t_stack **stack_b);
 
 //for_mac
 int	ft_isdigit(int c);
-int find_highest(t_stack *stack);
 
 #endif

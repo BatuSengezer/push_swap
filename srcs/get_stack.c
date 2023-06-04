@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:14:51 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/04 14:24:49 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/04 19:07:53 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ t_stack* create_node(int position, int value)
     if (!new_node)
         return (NULL);
     new_node->pos = position;
-    new_node->val = value;    
+    new_node->val = value;
+    new_node->sorted_pos = 0;
     new_node->next = NULL;
     return (new_node);
 }
@@ -50,6 +51,21 @@ void add_to_end(t_stack **head, t_stack *new_node)
         list_tail(*head)->next = new_node;
 }
 
+int list_size(t_stack *stack)
+{
+    int size;
+
+    size = 0;
+    while(stack)
+    {
+        size++;
+        if(!stack->next)
+            return(size);
+        stack = stack->next;
+    }
+    return(size);
+}
+
 
 t_stack *fill_stack_a(int ac, char **av)
 {
@@ -69,35 +85,34 @@ t_stack *fill_stack_a(int ac, char **av)
             add_to_end(&stack_a,create_node(i, (int)num));
         i++;
     }
+    sorted_pos(stack_a);
     return (stack_a);
 }
 
-int list_size(t_stack *stack)
+void sorted_pos(t_stack *stack)
 {
     int size;
+    int highest;
+    int current_highest;
+    t_stack *current;
 
-    size = 0;
-    while(stack)
+    size =list_size(stack);
+    highest = find_highest(stack);
+    while (size > 0)
     {
-        size++;
-        if(!stack->next)
-            return(size);
-        stack = stack->next;
+        current = stack;
+        current_highest = INT_MIN;
+        while (current)
+        {
+            if (current->sorted_pos == 0 && current->val == highest)
+            {
+                current->sorted_pos = size;
+                size--;
+            }
+            if (current->val > current_highest && current->sorted_pos == 0)
+                current_highest = current->val;
+            current = current->next;
+        }
+        highest = current_highest;
     }
-    return(size);
 }
-
-
-
-// void sorted_pos(t_stack *stack)
-// {
-//     int highest;
-//     highest = INT_MAX;
-//     find_highest(stack);
-//     while (stack)
-//     {
-//         stack
-//     }
-    
-// }
-

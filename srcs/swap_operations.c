@@ -11,6 +11,9 @@ void swap_a(t_stack **stack_a)
     tmp->val = (*stack_a)->val;
     (*stack_a)->val = (*stack_a)->next->val;
     (*stack_a)->next->val = tmp->val;
+    tmp->sorted_pos = (*stack_a)->sorted_pos;
+    (*stack_a)->sorted_pos = (*stack_a)->next->sorted_pos;
+    (*stack_a)->next->sorted_pos = tmp->sorted_pos;
     write(1, "sa\n", 3);
 }
 
@@ -25,6 +28,9 @@ void swap_b(t_stack **stack_b)
     tmp->val = (*stack_b)->val;
     (*stack_b)->val = (*stack_b)->next->val;
     (*stack_b)->next->val = tmp->val;
+    tmp->sorted_pos = (*stack_b)->sorted_pos;
+    (*stack_b)->sorted_pos = (*stack_b)->next->sorted_pos;
+    (*stack_b)->next->sorted_pos = tmp->sorted_pos;
     write(1, "sb\n", 3);
 }
 
@@ -39,9 +45,15 @@ void swap_ab(t_stack **stack_a, t_stack **stack_b)
     tmp_a->val = (*stack_a)->val;
     (*stack_a)->val = (*stack_a)->next->val;
     (*stack_a)->next->val = tmp_a->val;
+    tmp_a->sorted_pos = (*stack_a)->sorted_pos;
+    (*stack_a)->sorted_pos = (*stack_a)->next->sorted_pos;
+    (*stack_a)->next->sorted_pos = tmp_a->sorted_pos;
     tmp_b->val = (*stack_b)->val;
     (*stack_b)->val = (*stack_b)->next->val;
     (*stack_b)->next->val = tmp_b->val;
+    tmp_b->sorted_pos = (*stack_b)->sorted_pos;
+    (*stack_b)->sorted_pos = (*stack_b)->next->sorted_pos;
+    (*stack_b)->next->sorted_pos = tmp_b->sorted_pos;
     write(1, "ss\n", 3);
 }
 
