@@ -35,7 +35,7 @@ int main(int ac, char **av)
     }
     printf("sort_check: %d\n",sorted_check(stack_a));
     printf("highest_val: %d\n",find_highest(stack_a));
-    printf("highest_val: %d\n",list_size(stack_a));
+    printf("size is: %d\n",list_size(stack_a));
 
 
     // // push_check

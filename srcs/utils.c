@@ -34,7 +34,7 @@ int find_highest(t_stack *stack)
 
 	while (stack->next)
 	{
-		if(stack->val < stack->next->val)
+		if(stack->next->val > highest)
 			highest = stack->next->val;
 		stack = stack->next;
 	}
