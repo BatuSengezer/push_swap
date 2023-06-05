@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:14:51 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/04 19:07:53 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/04 21:41:14 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ int list_size(t_stack *stack)
     return(size);
 }
 
-
 t_stack *fill_stack_a(int ac, char **av)
 {
     t_stack *stack_a;
@@ -89,6 +88,7 @@ t_stack *fill_stack_a(int ac, char **av)
     return (stack_a);
 }
 
+//assings ascending sorted position values to stack starting from 1
 void sorted_pos(t_stack *stack)
 {
     int size;

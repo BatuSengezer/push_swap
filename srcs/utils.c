@@ -29,14 +29,16 @@ long int	ft_atol(const char *str)
 int find_highest(t_stack *stack)
 {
 	int highest;
+	t_stack *tmp;
 
-	highest = stack->val;
+	tmp = stack;
+	highest = tmp->val;
 
-	while (stack->next)
+	while (tmp && tmp->next)
 	{
-		if(stack->next->val > highest)
-			highest = stack->next->val;
-		stack = stack->next;
+		tmp = tmp->next;
+		if(tmp->val > highest)
+			highest = tmp->val;
 	}
 	return(highest);
 }

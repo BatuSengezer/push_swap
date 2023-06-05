@@ -12,15 +12,29 @@
 void push_b(t_stack **stack_a, t_stack **stack_b)
 {
     t_stack *tmp;
+    t_stack *current_a;
+    t_stack *current_b;
+    int pos;
 
     if(!(*stack_a))
         return;
     tmp = *stack_a;
-    if (!(*stack_b))
+    *stack_a = (*stack_a)->next;
+    tmp->next = *stack_b;
+	*stack_b = tmp;
+    pos = 1;
+    current_a = *stack_a;
+    current_b = *stack_b;
+    while (*stack_a != NULL)
     {
-        *stack_b = tmp;
-        (*stack_b)->next = NULL;
+        current_a->pos = pos++;
+        current_a = (current_a)->next;
     }
-    
+    pos = 1;
+    while (current_b != NULL)
+    {
+        current_b->pos = pos++;
+        current_b = (current_b)->next;
+    }
     write(1, "pb\n", 3);
 }
