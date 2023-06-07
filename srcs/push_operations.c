@@ -21,13 +21,12 @@ void push_b(t_stack **stack_a, t_stack **stack_b)
     tmp = *stack_a;
     *stack_a = (*stack_a)->next;
     tmp->next = *stack_b;
-	*stack_b = tmp;
-    pos = 1;
+    *stack_b = tmp;
     current_a = *stack_a;
     current_b = *stack_b;
-    while (*stack_a != NULL)
+    while (current_a != NULL)
     {
-        current_a->pos = pos++;
+        current_a->pos -= 1;
         current_a = (current_a)->next;
     }
     pos = 1;
