@@ -50,6 +50,7 @@ int main(int ac, char **av)
             current_b = current_b->next;
     }
     push_b(&stack_a, &stack_b);
+    push_b(&stack_a, &stack_b);
     current_a = stack_a;  // Reset current_a to the beginning of stack_a
     current_b = stack_b; 
     printf("after push:\n");
@@ -58,7 +59,7 @@ int main(int ac, char **av)
         printf("A value, position, sorted pos is: %d, %d, %d\n", current_a->val, current_a->pos, current_a->sorted_pos);
         current_a = current_a->next;
     }
-    
+    printf("---------------\n");
     while (current_b != NULL) 
     {
         printf("B value, position, sorted pos is: %d, %d, %d\n", current_b->val, current_b->pos, current_b->sorted_pos);
