@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:14 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/04 17:04:32 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/08 02:47:25 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,8 @@ void sort_three(t_stack **stack_a);
 void swap_a(t_stack **stack_a);
 void swap_b(t_stack **stack_b);
 void swap_ab(t_stack **stack_a, t_stack **stack_b);
+void push_a(t_stack **stack_a, t_stack **stack_b);
 void push_b(t_stack **stack_a, t_stack **stack_b);
-
 
 
 //for_mac

@@ -51,6 +51,7 @@ int main(int ac, char **av)
     }
     push_b(&stack_a, &stack_b);
     push_b(&stack_a, &stack_b);
+    push_a(&stack_a, &stack_b);
     current_a = stack_a;  // Reset current_a to the beginning of stack_a
     current_b = stack_b; 
     printf("after push:\n");
