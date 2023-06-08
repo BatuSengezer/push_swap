@@ -9,13 +9,11 @@ void rotate(t_stack **stack)
         return ;
     t_stack *head;
     t_stack *current;
-    t_stack *tail;
 
-    tail = list_tail(*stack);
     head = *stack;
     *stack = (*stack)->next;
     head->next = NULL;
-    tail->next = head;
+    list_tail(*stack)->next = head;
 
     current = *stack;
     while (current)

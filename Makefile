@@ -6,7 +6,7 @@
 #    By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 15:15:02 by bsengeze          #+#    #+#              #
-#    Updated: 2023/06/08 03:08:15 by bsengeze         ###   ########.fr        #
+#    Updated: 2023/06/08 08:17:05 by bsengeze         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,8 +29,11 @@ SRCS = $(addprefix $(SRC_DIR), \
 		swap_operations.c \
 		push_operations.c \
 		rotate_operations.c \
+		reverse_rotate_operations.c \
 		for_mac.c)
+		
 ##remove for_mac.c before eval
+
 OBJS = $(SRCS:.c=.o)
 
 $(NAME): $(OBJS)

@@ -18,7 +18,7 @@ int main(int ac, char **av)
     current_a = stack_a;
     current_b = stack_b;
 
-    // // swap_check
+    // // swap_test
     // printf("before swap:\n");
     // while(current_a != NULL)
     // {
@@ -35,7 +35,7 @@ int main(int ac, char **av)
     // printf("sort_check: %d\n",sorted_check(stack_a));
     // printf("highest_val: %d\n",find_highest(stack_a));
     // printf("size is: %d\n",list_size(stack_a));
-    // // push_check
+    // // push_test
     // printf("highest is: %d \n", find_highest(stack_a));
     // printf("before push:\n");
     // while (current_a != NULL)
@@ -64,7 +64,7 @@ int main(int ac, char **av)
     //     printf("B value, position, sorted pos is: %d, %d, %d\n", current_b->val, current_b->pos, current_b->sorted_pos);
     //     current_b = current_b->next;
     // }
-    // rotate_test
+    // // rotate_test
     printf("before rotate:\n");
     while(current_a)
     {
@@ -76,13 +76,14 @@ int main(int ac, char **av)
             current_b = current_b->next;
         }
     }
-    //rotate_b(&stack_a);
+    // //rotate_b(&stack_a);
     push_b(&stack_a, &stack_b);
     push_b(&stack_a, &stack_b);
-    rotate_ab(&stack_a,&stack_b);
+    push_b(&stack_a, &stack_b);
+    reverse_rotate_ab(&stack_a,&stack_b);
     current_a = stack_a;
     current_b = stack_b; 
-    printf("after rotate:\n");
+    printf("after rotate: \n");
     while(current_a != NULL)
     {
         printf("A value, position, sorted pos  is: %d, %d, %d\n",current_a->val, current_a->pos, current_a->sorted_pos);

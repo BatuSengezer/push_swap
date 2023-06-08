@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:14 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/08 04:43:21 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/08 08:15:58 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ void write_error(void);
 // util functions
 long int	ft_atol(const char *str);
 int find_highest(t_stack *stack);
+t_stack *new_tail(t_stack *new_tail);
 
 
 //sort functions
@@ -63,6 +64,11 @@ void rotate(t_stack **stack);
 void rotate_a(t_stack **stack_a);
 void rotate_b(t_stack **stack_a);
 void rotate_ab(t_stack **stack_a,t_stack **stack_b);
+void reverse_rotate(t_stack **stack);
+void reverse_rotate_a(t_stack **stack_a);
+void reverse_rotate_b(t_stack **stack_b);
+void reverse_rotate_ab(t_stack **stack_a,t_stack **stack_b);
+
 
 
 //for_mac
