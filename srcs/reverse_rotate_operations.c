@@ -2,13 +2,8 @@
 
 #include "../includes/push_swap.h"
 
-// rra (reverse rotate a): 
-// rrb (reverse rotate b): 
-// rrr : rra and rrb at the same time.
-
 // Shift down all elements of stack a by 1.
 // The last element becomes the first one.
-
 t_stack *new_tail(t_stack *new_tail)
 {
     t_stack *old_tail;

@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:14 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/08 08:15:58 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/08 18:01:34 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,7 @@ int sorted_check(t_stack *stack);
 void sort_three(t_stack **stack_a);
 
 //operations
+void swap(t_stack **stack);
 void swap_a(t_stack **stack_a);
 void swap_b(t_stack **stack_b);
 void swap_ab(t_stack **stack_a, t_stack **stack_b);
