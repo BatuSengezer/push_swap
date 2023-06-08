@@ -6,7 +6,7 @@
 #    By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 15:15:02 by bsengeze          #+#    #+#              #
-#    Updated: 2023/06/04 04:03:38 by bsengeze         ###   ########.fr        #
+#    Updated: 2023/06/08 03:08:15 by bsengeze         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,9 +24,11 @@ SRCS = $(addprefix $(SRC_DIR), \
 		get_stack.c \
 		error_handling.c \
 		utils.c \
+		list_utils.c \
 		sort.c \
 		swap_operations.c \
 		push_operations.c \
+		rotate_operations.c \
 		for_mac.c)
 ##remove for_mac.c before eval
 OBJS = $(SRCS:.c=.o)

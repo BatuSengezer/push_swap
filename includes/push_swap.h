@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:14 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/08 02:47:25 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/08 04:43:21 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,10 @@ void swap_b(t_stack **stack_b);
 void swap_ab(t_stack **stack_a, t_stack **stack_b);
 void push_a(t_stack **stack_a, t_stack **stack_b);
 void push_b(t_stack **stack_a, t_stack **stack_b);
+void rotate(t_stack **stack);
+void rotate_a(t_stack **stack_a);
+void rotate_b(t_stack **stack_a);
+void rotate_ab(t_stack **stack_a,t_stack **stack_b);
 
 
 //for_mac

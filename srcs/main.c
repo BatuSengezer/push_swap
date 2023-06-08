@@ -26,7 +26,6 @@ int main(int ac, char **av)
     //     current_a = current_a->next;
     // }
     // swap_a(&stack_a);
-    
     // printf("after swap:\n");
     // while(head_a != NULL)
     // {
@@ -36,35 +35,66 @@ int main(int ac, char **av)
     // printf("sort_check: %d\n",sorted_check(stack_a));
     // printf("highest_val: %d\n",find_highest(stack_a));
     // printf("size is: %d\n",list_size(stack_a));
-
-    // push_check
-    printf("highest is: %d \n", find_highest(stack_a));
-    printf("before push:\n");
-    while (current_a != NULL)
+    // // push_check
+    // printf("highest is: %d \n", find_highest(stack_a));
+    // printf("before push:\n");
+    // while (current_a != NULL)
+    // {
+    //     printf("A value, position, sorted pos is: %d, %d, %d\n", current_a->val, current_a->pos, current_a->sorted_pos);
+    //     if (current_b != NULL)  // Check if current_b is not NULL before accessing its members
+    //         printf("B value, position, sorted pos is: %d, %d, %d\n", current_b->val, current_b->pos, current_b->sorted_pos);
+    //     current_a = current_a->next;
+    //     if (current_b != NULL)
+    //         current_b = current_b->next;
+    // }
+    // push_b(&stack_a, &stack_b);
+    // push_b(&stack_a, &stack_b);
+    // push_a(&stack_a, &stack_b);
+    // current_a = stack_a;  // Reset current_a to the beginning of stack_a
+    // current_b = stack_b; 
+    // printf("after push:\n");
+    // while (current_a != NULL) 
+    // {
+    //     printf("A value, position, sorted pos is: %d, %d, %d\n", current_a->val, current_a->pos, current_a->sorted_pos);
+    //     current_a = current_a->next;
+    // }
+    // printf("---------------\n");
+    // while (current_b != NULL) 
+    // {
+    //     printf("B value, position, sorted pos is: %d, %d, %d\n", current_b->val, current_b->pos, current_b->sorted_pos);
+    //     current_b = current_b->next;
+    // }
+    // rotate_test
+    printf("before rotate:\n");
+    while(current_a)
     {
-        printf("A value, position, sorted pos is: %d, %d, %d\n", current_a->val, current_a->pos, current_a->sorted_pos);
-        if (current_b != NULL)  // Check if current_b is not NULL before accessing its members
-            printf("B value, position, sorted pos is: %d, %d, %d\n", current_b->val, current_b->pos, current_b->sorted_pos);
+        printf("A value, position, sorted_pos is:%d, %d, %d\n",current_a->val, current_a->pos, current_a->sorted_pos);
         current_a = current_a->next;
-        if (current_b != NULL)
+        if (current_b)
+        {
+            printf("B value, position, sorted_pos is:%d, %d, %d\n",current_b->val, current_b->pos, current_b->sorted_pos);
             current_b = current_b->next;
+        }
     }
+    //rotate_b(&stack_a);
     push_b(&stack_a, &stack_b);
     push_b(&stack_a, &stack_b);
-    push_a(&stack_a, &stack_b);
-    current_a = stack_a;  // Reset current_a to the beginning of stack_a
+    rotate_ab(&stack_a,&stack_b);
+    current_a = stack_a;
     current_b = stack_b; 
-    printf("after push:\n");
-    while (current_a != NULL) 
+    printf("after rotate:\n");
+    while(current_a != NULL)
     {
-        printf("A value, position, sorted pos is: %d, %d, %d\n", current_a->val, current_a->pos, current_a->sorted_pos);
+        printf("A value, position, sorted pos  is: %d, %d, %d\n",current_a->val, current_a->pos, current_a->sorted_pos);
         current_a = current_a->next;
     }
-    printf("---------------\n");
-    while (current_b != NULL) 
+     while(current_b != NULL)
     {
-        printf("B value, position, sorted pos is: %d, %d, %d\n", current_b->val, current_b->pos, current_b->sorted_pos);
+        printf("B value, position, sorted pos  is: %d, %d, %d\n",current_b->val, current_b->pos, current_b->sorted_pos);
         current_b = current_b->next;
     }
+
+
+
     return (0);
 }
