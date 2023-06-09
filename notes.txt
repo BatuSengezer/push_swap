@@ -1,9 +1,7 @@
 Handle errors of string input and duplicate input
-
+free mallocs
+write parsing so following works
 ARG="4 67 3 87 23"; ./push_swap $ARG
-
-
-
 
 
 

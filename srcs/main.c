@@ -104,33 +104,33 @@ int main(int ac, char **av)
     //     current_b = current_b->next;
     // }
 
-    // sort_three test
-    printf("before sort_three:\n");
-    while(current_a)
-    {
-        printf("A value, position, sorted_pos is:%d, %d, %d\n",current_a->val, current_a->pos, current_a->sorted_pos);
-        current_a = current_a->next;
-        if (current_b)
-        {
-            printf("B value, position, sorted_pos is:%d, %d, %d\n",current_b->val, current_b->pos, current_b->sorted_pos);
-            current_b = current_b->next;
-        }
-    }
-    // //rotate_b(&stack_a);
-    sort_three(&stack_a);
-    // swap_a(&stack_a);
-    current_a = stack_a;
-    printf("after sort_three: \n");
-    while(current_a != NULL)
-    {
-        printf("A value, position, sorted pos  is: %d, %d, %d\n",current_a->val, current_a->pos, current_a->sorted_pos);
-        current_a = current_a->next;
-    }
-     while(current_b != NULL)
-    {
-        printf("B value, position, sorted pos  is: %d, %d, %d\n",current_b->val, current_b->pos, current_b->sorted_pos);
-        current_b = current_b->next;
-    }
+    // // sort_three test
+    // printf("before sort_three:\n");
+    // while(current_a)
+    // {
+    //     printf("A value, position, sorted_pos is:%d, %d, %d\n",current_a->val, current_a->pos, current_a->sorted_pos);
+    //     current_a = current_a->next;
+    //     if (current_b)
+    //     {
+    //         printf("B value, position, sorted_pos is:%d, %d, %d\n",current_b->val, current_b->pos, current_b->sorted_pos);
+    //         current_b = current_b->next;
+    //     }
+    // }
+    // // //rotate_b(&stack_a);
+    // sort_three(&stack_a);
+    // // swap_a(&stack_a);
+    // current_a = stack_a;
+    // printf("after sort_three: \n");
+    // while(current_a != NULL)
+    // {
+    //     printf("A value, position, sorted pos  is: %d, %d, %d\n",current_a->val, current_a->pos, current_a->sorted_pos);
+    //     current_a = current_a->next;
+    // }
+    //  while(current_b != NULL)
+    // {
+    //     printf("B value, position, sorted pos  is: %d, %d, %d\n",current_b->val, current_b->pos, current_b->sorted_pos);
+    //     current_b = current_b->next;
+    // }
 
 
 
