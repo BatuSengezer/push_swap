@@ -1,6 +1,6 @@
 #include "../includes/push_swap.h"
 
-//allocate memory and create a new node with given position and value
+//allocates memory and create a new node with given position and value
 t_stack* create_node(int position, int value)
 {
     t_stack *new_node;
@@ -23,7 +23,7 @@ t_stack *list_tail(t_stack *list)
     return(list);
 }
 
-//add node to the end of the list
+//adds node to the end of the list
 void add_to_end(t_stack **head, t_stack *new_node)
 {
     if (!head)
@@ -35,6 +35,7 @@ void add_to_end(t_stack **head, t_stack *new_node)
         list_tail(*head)->next = new_node;
 }
 
+//returns size of a list
 int list_size(t_stack *stack)
 {
     int size;
@@ -48,4 +49,19 @@ int list_size(t_stack *stack)
         stack = stack->next;
     }
     return(size);
+}
+
+// frees a list
+void free_list(t_stack **list)
+{
+	t_stack	*tmp;
+
+	if (!list)
+		return ;
+	while (*list)
+	{
+		tmp = (*list)->next;
+		free(*list);
+		*list = tmp;
+	}
 }

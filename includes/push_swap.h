@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:14 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/08 22:49:48 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/11 23:13:10 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ void add_to_end(t_stack **head, t_stack *new_node);
 t_stack *list_tail(t_stack *list);
 t_stack *fill_stack_a(int ac, char **av);
 int list_size(t_stack *stack);
+void free_list(t_stack **list);
 
 
 
