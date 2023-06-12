@@ -8,3 +8,17 @@ ARG="4 67 3 87 23"; ./push_swap $ARG
 
 
 *stack for reading **stack for manipulating linked list
+
+
+changes
+
+--shell generate random ints in Bash 
+n=5
+for ((i=0; i<$n; i++)); do echo $((RANDOM % 100 + 1)); done
+
+--shell generate random ints in Bash for a program
+n=5; ./push_swap $(for ((i=0; i<$n; i++)); do echo $((RANDOM % 100 + 1)); done) 
+
+
+new_file.c 
+sorted_push_except_three test in main
