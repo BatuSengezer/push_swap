@@ -6,7 +6,7 @@ int sorted_check(t_stack *stack)
     {
         if(stack->val > stack->next->val)
             return (0);
-            stack= stack->next;
+        stack= stack->next;
     }
     return (1);
 }
@@ -15,9 +15,9 @@ void sort_three(t_stack **stack_a)
 {
     int highest;
 
-    highest = find_highest(*stack_a);
     if (sorted_check(*stack_a) == 1)
         return;
+    highest = find_highest(*stack_a);
     if ((*stack_a)->val == highest)
     {
         rotate_a(stack_a);
@@ -71,3 +71,48 @@ void sorted_push_except_three(t_stack **s_a, t_stack **s_b)
 
 }
 // add doubles rr rrr ss by comparinh stack a b and their next
+void	sort_big(t_stack **stack_a, t_stack **stack_b)
+{
+    sorted_push_except_three(stack_a, stack_b);
+	sort_three(stack_a);
+	while (*stack_b)
+	{
+		get_target_pos(stack_a, stack_b);
+		get_cost(stack_a, stack_b);
+		do_best_move(stack_a, stack_b);
+	}
+	if (!sorted_check(*stack_a))
+		shift_stack(stack_a);
+}
+
+
+/* shift_stack:
+*	After the bulk of the stack is sorted, shifts stack a until the lowest
+*	value is at the top. If it is in the bottom half of the stack, reverse
+*	rotate it into position, otherwise rotate until it is at the top of the
+*	stack.
+*/
+void	shift_stack(t_stack **stack_a)
+{
+	int	lowest;
+	int	size;
+
+	size = list_size(*stack_a);
+	lowest = find_lowest_pos(stack_a);
+	if (lowest > size / 2)
+	{
+		while (lowest < size)
+		{
+			reverse_rotate_a(stack_a);
+			lowest++;
+		}
+	}
+	else
+	{
+		while (lowest > 0)
+		{
+			rotate_a(stack_a);
+			lowest--;
+		}
+	}
+}

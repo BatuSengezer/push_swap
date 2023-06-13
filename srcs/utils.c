@@ -44,6 +44,23 @@ int find_highest(t_stack *stack)
 	return(highest);
 }
 
+int find_lowest_pos(t_stack **stack)
+{
+	t_stack *tmp;
+	t_stack *tmp_lowest;
+
+	tmp = *stack;
+	if (tmp)
+		tmp_lowest = tmp;
+	while (tmp)
+	{
+		if(tmp->sorted_pos < tmp_lowest->sorted_pos)
+			tmp_lowest = tmp;
+		tmp = tmp->next;
+	}
+	return(tmp_lowest->pos);
+}
+
 // takes absolute of a number
 int abs_num(int num)
 {

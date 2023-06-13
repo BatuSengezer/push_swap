@@ -1,3 +1,4 @@
+
 #include "../includes/push_swap.h"
 
 // if there are bigger sorted_pos in a, makes target smallest bigger sorted_pos
@@ -60,14 +61,14 @@ void	get_cost(t_stack **stack_a, t_stack **stack_b)
 	size_b = list_size(tmp_b);
     while (tmp_b)
     {
-        if (tmp_b->pos <= size_b / 2)
-    		tmp_b->cost_b = tmp_b->pos;
+        if (tmp_b->pos -1 <= size_b / 2)
+    		tmp_b->cost_b = tmp_b->pos - 1;
         else
-			tmp_b->cost_b = (size_b - tmp_b->pos) * -1;
-        if (tmp_b->target_pos <= size_a / 2)
-    		tmp_b->cost_a = tmp_b->target_pos;
+			tmp_b->cost_b = (size_b - tmp_b->pos +1) * -1;
+        if (tmp_b->target_pos -1 <= size_a / 2)
+    		tmp_b->cost_a = tmp_b->target_pos -1;
         else
-			tmp_b->cost_a = (size_a - tmp_b->target_pos) * -1;
+			tmp_b->cost_a = (size_a - tmp_b->target_pos +1) * -1;
 		tmp_b = tmp_b->next;
     }
 }
