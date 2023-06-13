@@ -1,16 +1,9 @@
-Handle errors of string input and duplicate input
-free mallocs
+--Handle errors of string input and duplicate input
+free mallocs in case of error and wrong input
 write parsing so following works
 ARG="4 67 3 87 23"; ./push_swap $ARG
 
 
-
-
-
-*stack for reading **stack for manipulating linked list
-
-
-changes
 
 --shell generate random ints in Bash 
 n=5
@@ -20,5 +13,13 @@ for ((i=0; i<$n; i++)); do echo $((RANDOM % 100 + 1)); done
 n=5; ./push_swap $(for ((i=0; i<$n; i++)); do echo $((RANDOM % 100 + 1)); done) 
 
 
-new_file.c 
-sorted_push_except_three test in main
+1)
+*stack for reading **stack for manipulating linked list
+
+2)
+if you want to modify the stack_a pointer itself within the free_list function 
+(e.g., set it to NULL after freeing the memory), you should use free_list(&stack_a). 
+If you only want to free the memory associated with the elements of the list and not modify 
+the stack_a pointer itself, you should pass stack_a directly to the free_list function
+
+3)

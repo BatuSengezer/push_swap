@@ -104,7 +104,7 @@ int main(int ac, char **av)
     //     current_b = current_b->next;
     // }
 
-    // // sort_three test
+    // // sort_three and sorted_push_except_three test
     // printf("before sort_three:\n");
     // while(current_a)
     // {
@@ -119,37 +119,8 @@ int main(int ac, char **av)
     // // //rotate_b(&stack_a);
     // sort_three(&stack_a);
     // // swap_a(&stack_a);
-    // current_a = stack_a;
-    // printf("after sort_three: \n");
-    // while(current_a != NULL)
-    // {
-    //     printf("A value, position, sorted pos  is: %d, %d, %d\n",current_a->val, current_a->pos, current_a->sorted_pos);
-    //     current_a = current_a->next;
-    // }
-    //  while(current_b != NULL)
-    // {
-    //     printf("B value, position, sorted pos  is: %d, %d, %d\n",current_b->val, current_b->pos, current_b->sorted_pos);
-    //     current_b = current_b->next;
-    // }
-
-    
-    // // sorted_push_except_three
-    // printf("before sort_three:\n");
-    // while(current_a)
-    // {
-    //     printf("A value, position, sorted_pos is:%d, %d, %d\n",current_a->val, current_a->pos, current_a->sorted_pos);
-    //     current_a = current_a->next;
-    //     if (current_b)
-    //     {
-    //         printf("B value, position, sorted_pos is:%d, %d, %d\n",current_b->val, current_b->pos, current_b->sorted_pos);
-    //         current_b = current_b->next;
-    //     }
-    // }
-    // // //rotate_b(&stack_a);
     // sorted_push_except_three(&stack_a, &stack_b);
-    // // swap_a(&stack_a);
     // current_a = stack_a;
-    // current_b = stack_b;
     // printf("after sort_three: \n");
     // while(current_a != NULL)
     // {
@@ -162,6 +133,42 @@ int main(int ac, char **av)
     //     current_b = current_b->next;
     // }
 
+    // get_target_pos and get_cost test
+    printf("before:\n");
+    while(current_a != NULL)
+    {
+        printf("A value, position, sorted pos, target pos, cost_a, cost_b  is: %d, %d, %d, %d, %d, %d\n",current_a->val, current_a->pos, current_a->sorted_pos, current_a->target_pos, current_a->cost_a, current_a->cost_b);
+        current_a = current_a->next;
+    }
+    while(current_b != NULL)
+    {
+        printf("B value, position, sorted pos, target pos, cost_a, cost_b  is: %d, %d, %d, %d, %d, %d\n",current_b->val, current_b->pos, current_b->sorted_pos, current_b->target_pos, current_b->cost_a, current_b->cost_b);
+        current_b = current_b->next;
+    }
+    // //rotate_b(&stack_a);
+    sorted_push_except_three(&stack_a, &stack_b);
+    reverse_rotate_b(&stack_b);
+    reverse_rotate_b(&stack_b);
+    push_a(&stack_a, &stack_b);
+    push_a(&stack_a, &stack_b);
+    get_target_pos(&stack_a, &stack_b);
+    get_cost(&stack_a, &stack_b);
+    // swap_a(&stack_a);
+    current_a = stack_a;
+    current_b = stack_b;
+    printf("after : \n");
+    while(current_a != NULL)
+    {
+        printf("A value, position, sorted pos, target pos, cost_a, cost_b  is: %d, %d, %d, %d, %d, %d\n",current_a->val, current_a->pos, current_a->sorted_pos, current_a->target_pos, current_a->cost_a, current_a->cost_b);
+        current_a = current_a->next;
+    }
+    while(current_b != NULL)
+    {
+        printf("B value, position, sorted pos, target pos, cost_a, cost_b  is: %d, %d, %d, %d, %d, %d\n",current_b->val, current_b->pos, current_b->sorted_pos, current_b->target_pos, current_b->cost_a, current_b->cost_b);
+        current_b = current_b->next;
+    }
 
+    free_list(&stack_a);
+    
     return (0);
 }

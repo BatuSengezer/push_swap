@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:14 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/11 23:13:10 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/08 22:49:48 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,17 +24,20 @@ typedef struct stack
 	int	pos;
 	int sorted_pos;
 	int	val;
+	int target_pos;
+	int	cost_a;
+	int	cost_b;
 	struct stack *next;
 }	t_stack;
 
 
 int main(int ac, char **av);
-//list operations
 
+//list operations
+t_stack *fill_stack_a(int ac, char **av);
 t_stack* create_node(int position, int value);
 void add_to_end(t_stack **head, t_stack *new_node);
 t_stack *list_tail(t_stack *list);
-t_stack *fill_stack_a(int ac, char **av);
 int list_size(t_stack *stack);
 void free_list(t_stack **list);
 
@@ -47,6 +50,7 @@ void write_error(void);
 // util functions
 long int	ft_atol(const char *str);
 int find_highest(t_stack *stack);
+int abs_num(int num);
 t_stack *new_tail(t_stack *new_tail);
 
 
@@ -55,6 +59,16 @@ void sorted_pos(t_stack *stack);
 int sorted_check(t_stack *stack);
 void sort_three(t_stack **stack_a);
 void sorted_push_except_three(t_stack **stack_a, t_stack **stack_b);
+
+void get_target_pos(t_stack **stack_a, t_stack **stack_b);
+void get_cost(t_stack **stack_a, t_stack **stack_b);
+void do_best_move(t_stack **stack_a, t_stack **stack_b);
+void move_to_a(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b);
+void rev_rotate_ab_to_pos(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void rotate_ab_to_pos(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void rotate_a_to_pos(t_stack **a, int *cost_a);
+void rotate_b_to_pos(t_stack **b, int *cost_b);
+
 
 //operations
 void swap(t_stack **stack);

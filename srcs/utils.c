@@ -43,3 +43,11 @@ int find_highest(t_stack *stack)
 	}
 	return(highest);
 }
+
+// takes absolute of a number
+int abs_num(int num)
+{
+	if (num < 0)
+		num = num * -1;
+	return (num);
+}

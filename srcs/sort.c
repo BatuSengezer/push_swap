@@ -34,35 +34,40 @@ void sort_three(t_stack **stack_a)
         swap_a(stack_a);
 }
 
-void sorted_push_except_three(t_stack **stack_a, t_stack **stack_b)
+
+
+// pushes and partially sorts all elements leaving only three in the stack 
+void sorted_push_except_three(t_stack **s_a, t_stack **s_b)
 {
     int size;
     int pushed;
     int count;
 
-    size = list_size(*stack_a);
+    size = list_size(*s_a);
     pushed = 0;
     count = 0;
     while (size > 6 && size > count && size / 2 > pushed)
     {
-        if((*stack_a)->sorted_pos <= size/2)
+        if(size/2 >= (*s_a)->sorted_pos)
         {
-            push_b(stack_a, stack_b);
+            push_b(s_a, s_b);
             pushed++;
-            //if ((*stack_a)->next)
+            // if ((*s_a)->next->val < (*s_a)->val && (*s_b)->val < (*s_b)->next->val)  uou can use tmps to reduce column num
+            //     ss(s_a, s_b);
+            // if ()
+            //     rr(s_a, s_b);
+            // if ()
+            //     rrr(s_a, s_b);
         }
         else
-            rotate_a(stack_a);
+            rotate_a(s_a);
         count++;
     }
     while (size - pushed > 3)
     {
-		push_b(stack_a, stack_b);
+		push_b(s_a, s_b);
 		pushed++;
     }
 
 }
-
-// add doubles rr rrr ss by comparing stack a b to improve eff
-
-
+// add doubles rr rrr ss by comparinh stack a b and their next

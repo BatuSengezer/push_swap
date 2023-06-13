@@ -6,7 +6,7 @@
 #    By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/06/01 15:15:02 by bsengeze          #+#    #+#              #
-#    Updated: 2023/06/12 01:12:49 by bsengeze         ###   ########.fr        #
+#    Updated: 2023/06/08 08:24:03 by bsengeze         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,8 +30,9 @@ SRCS = $(addprefix $(SRC_DIR), \
 		push_operations.c \
 		rotate_operations.c \
 		reverse_rotate_operations.c \
+		sort_2.c \
 		for_mac.c \
-		new_file.c)
+		)
 		
 ##remove for_mac.c before eval
 
