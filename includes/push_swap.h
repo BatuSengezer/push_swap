@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:14 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/13 15:04:34 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/13 21:43:43 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void sorted_pos(t_stack *stack);
 int sorted_check(t_stack *stack);
 void sort_three(t_stack **stack_a);
 void sorted_push_except_three(t_stack **stack_a, t_stack **stack_b);
-void	sort_big(t_stack **stack_a, t_stack **stack_b);
+void sort_big(t_stack **stack_a, t_stack **stack_b);
 
 void get_target_pos(t_stack **stack_a, t_stack **stack_b);
 void get_cost(t_stack **stack_a, t_stack **stack_b);
