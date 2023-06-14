@@ -1,16 +1,5 @@
 #include "../includes/push_swap.h"
 
-int sorted_check(t_stack *stack)
-{
-    while (stack->next)
-    {
-        if(stack->val > stack->next->val)
-            return (0);
-        stack= stack->next;
-    }
-    return (1);
-}
-
 void sort_three(t_stack **stack_a)
 {
     int highest;
@@ -115,4 +104,17 @@ void	shift_stack(t_stack **stack_a)
 			lowest--;
 		}
 	}
+}
+
+void push_swap(t_stack **stack_a, t_stack **stack_b)
+{
+    int size;
+
+    size = list_size(*stack_a);
+    if (size == 2 && !sorted_check(*stack_a))
+		swap_a(stack_a);
+	else if (size == 3)
+		sort_three(stack_a);
+	else if (size > 3 && !sorted_check(*stack_a))
+		sort_big(stack_a, stack_b);
 }
