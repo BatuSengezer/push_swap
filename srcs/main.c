@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsengeze <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 23:32:53 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/14 23:33:22 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/15 05:27:13 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ int	main(int ac, char **av)
 
 	if (ac < 2)
 		return (0);
-	// if (!is_correct_input(av)) 
-	// 	exit_error(NULL, NULL);
+	if (!is_correct_input(av)) 
+		exit_error(NULL, NULL);
 	stack_b = NULL;
 	stack_a = fill_stack_a(ac, av);
 	push_swap(&stack_a, &stack_b);

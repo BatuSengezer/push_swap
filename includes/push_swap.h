@@ -6,13 +6,14 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:14 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/15 04:07:32 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/15 04:57:12 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# include "../libft/libft.h"
 # include <limits.h>
 # include <stddef.h>
 # include <stdlib.h>
@@ -41,7 +42,6 @@ int			list_size(t_stack *stack);
 void		free_list(t_stack **list);
 t_stack		*new_tail(t_stack *new_tail);
 
-
 //error handling functions
 void		write_error(void);
 int			num_check(char *av);
@@ -49,13 +49,6 @@ int			zero_check(char *av);
 int			duplicate_check(char **av);
 int			num_str_cmp(const char *s1, const char *s2);
 int			is_correct_input(char **av);
-
-// util functions
-long int	ft_atol(const char *str);
-int			find_highest(t_stack *stack);
-int			find_lowest_pos(t_stack **stack);
-int			abs_num(int num);
-
 
 //sort functions
 void		sorted_pos(t_stack *stack);
@@ -90,8 +83,11 @@ void		reverse_rotate_a(t_stack **stack_a);
 void		reverse_rotate_b(t_stack **stack_b);
 void		reverse_rotate_ab(t_stack **stack_a, t_stack **stack_b);
 
-//for_mac
-int			ft_isdigit(int c);
-int			ft_issign(char c);
+// util functions
+long int	ft_atol(const char *str);
+int			find_highest(t_stack *stack);
+int			find_lowest_pos(t_stack **stack);
+int			abs_num(int num);
+
 
 #endif

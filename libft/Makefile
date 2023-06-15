@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: bsengeze <bsengeze@student.42.fr>          +#+  +:+       +#+         #
+#    By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/12/14 16:30:24 by bsengeze          #+#    #+#              #
-#    Updated: 2023/03/16 17:42:09 by bsengeze         ###   ########.fr        #
+#    Updated: 2023/06/15 04:44:29 by bsengeze         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,10 +61,6 @@ OBJS = $(SRCS:.c=.o)
 
 all:	$(NAME)
 
-#SRC files are not included to not double define(they are already defd in HDRS)
-#It is impossible to double define. Header prototypes the function for compiler
-#ft def is only required when compiler links all the .o files into final binary
-#targets, prerequirements, commands
 $(NAME):	$(OBJS) $(HDRS)
 			$(LIB) $(NAME) $(OBJS)
 

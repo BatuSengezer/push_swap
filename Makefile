@@ -22,9 +22,7 @@ SRC =	main.c \
 		push_operations.c \
 		rotate_operations.c \
 		reverse_rotate_operations.c \
-		for_mac.c \
 		
-##remove for_mac.c before eval
 SRCS	= $(addprefix $(SRC_DIR), $(SRC))
 
 OBJ		= $(SRC:.c=.o)

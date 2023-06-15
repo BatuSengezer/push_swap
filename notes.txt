@@ -1,7 +1,7 @@
 --Handle errors of string input and duplicate input
 free mallocs in case of error and wrong input
 check if the libft is working when you remove for mac and issign (probably on makefile you need to include objdir before objs)
-write parsing so following works  
+write parsing 
 ARG="4 67 3 87 23"; ./push_swap $ARG
 
 
