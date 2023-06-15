@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsengeze <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 22:42:43 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/14 23:40:43 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/15 04:07:35 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,30 @@ int	abs_num(int num)
 	if (num < 0)
 		num = num * -1;
 	return (num);
+}
+
+
+int	num_str_cmp(const char *s1, const char *s2)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	j = i;
+	if (s1[i] == '+')
+	{
+		if (s2[j] != '+')
+			i++;
+	}
+	else
+	{
+		if (s2[j] == '+')
+			j++;
+	}
+	while (s1[i] != '\0' && s2[j] != '\0' && s1[i] == s2[j])
+	{
+		i++;
+		j++;
+	}
+	return ((unsigned char)s1[i] - (unsigned char)s2[j]);
 }

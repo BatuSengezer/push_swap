@@ -1,8 +1,6 @@
 #include "../includes/push_swap.h"
 
-
-
-int	arg_is_num(char *av)
+int	num_check(char *av)
 {
 	int	i;
 
@@ -11,18 +9,65 @@ int	arg_is_num(char *av)
 		i++;
 	while (av[i] && ft_isdigit(av[i]))
 		i++;
-	if (av[i] != '\0' && ft_isdigit(av[i]))
+	if (av[i] != '\0' && !ft_isdigit(av[i]))
 		return (0);
 	return (1);
 }
 
+int	zero_check(char *av)
+{
+	int	i;
 
-// int input_check(char **av)
-// {
-//     int i;
+	i = 0;
+	if (ft_issign(av[i]))
+		i++;
+	while (av[i] && av[i] == '0')
+		i++;
+	if (av[i] != '\0')
+		return (0);
+	return (1);
+}
 
-//     i = 1;
-// }
+int	duplicate_check(char **av)
+{
+	int	i;
+	int	j;
+
+	i = 1;
+	while (av[i])
+	{
+		j = 1;
+		while (av[j])
+		{
+			if (j != i && num_str_cmp(av[i], av[j]) == 0)
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}
+
+int	is_correct_input(char **av)
+{
+	int	i;
+	int	zeros_cnt;
+
+	zeros_cnt = 0;
+	i = 1;
+	while (av[i])
+	{
+		if (!num_check(av[i]))
+			return (0);
+		zeros_cnt += zero_check(av[i]);
+		i++;
+	}
+	if (zeros_cnt > 1)
+		return (0);
+	if (duplicate_check(av))
+		return (0);
+	return (1);
+}
 
 
 
@@ -35,9 +80,3 @@ void write_error(void)
 
 
 
-//error utils
-
-int	ft_issign(char c)
-{
-	return (c == '+' || c == '-');
-}

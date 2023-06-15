@@ -42,7 +42,6 @@ $(NAME): $(OBJS)
 		make -C $(LIBFT_DIR)
 		$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(INCLUDE)
 
-
 clean:
 		rm -rf $(OBJ_DIR)
 		@cd $(LIBFT_DIR) && $(MAKE) clean

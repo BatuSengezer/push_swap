@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   do_best_move_utils.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bsengeze <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 23:53:09 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/14 23:54:36 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/15 03:33:29 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
 // reverse rotates both stacks until one of them is in position
-void	rev_rotate_ab_to_pos(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
+void	rev_rot_ab(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 {
 	while (*cost_a < 0 && *cost_b < 0)
 	{
@@ -24,7 +24,7 @@ void	rev_rotate_ab_to_pos(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 }
 
 // rotates both stacks until one of them is in position
-void	rotate_ab_to_pos(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
+void	rot_ab(t_stack **a, t_stack **b, int *cost_a, int *cost_b)
 {
 	while (*cost_a > 0 && *cost_b > 0)
 	{

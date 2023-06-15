@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:14 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/15 00:04:30 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/15 04:07:32 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,23 @@ void		add_to_end(t_stack **head, t_stack *new_node);
 t_stack		*list_tail(t_stack *list);
 int			list_size(t_stack *stack);
 void		free_list(t_stack **list);
+t_stack		*new_tail(t_stack *new_tail);
+
 
 //error handling functions
 void		write_error(void);
-int			arg_is_num(char *av);
+int			num_check(char *av);
+int			zero_check(char *av);
+int			duplicate_check(char **av);
+int			num_str_cmp(const char *s1, const char *s2);
+int			is_correct_input(char **av);
 
 // util functions
 long int	ft_atol(const char *str);
 int			find_highest(t_stack *stack);
 int			find_lowest_pos(t_stack **stack);
 int			abs_num(int num);
-t_stack		*new_tail(t_stack *new_tail);
+
 
 //sort functions
 void		sorted_pos(t_stack *stack);
@@ -60,9 +66,9 @@ void		sort_big(t_stack **stack_a, t_stack **stack_b);
 void		get_target_pos(t_stack **stack_a, t_stack **stack_b);
 void		get_cost(t_stack **stack_a, t_stack **stack_b);
 void		do_best_move(t_stack **stack_a, t_stack **stack_b);
-void		move_to_a(t_stack **stack_a, t_stack **stack_b, int cost_a, int cost_b);
-void		rev_rotate_ab_to_pos(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
-void		rotate_ab_to_pos(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void		move_to_a(t_stack **a, t_stack **b, int cost_a, int cost_b);
+void		rev_rot_ab(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
+void		rot_ab(t_stack **a, t_stack **b, int *cost_a, int *cost_b);
 void		rotate_a_to_pos(t_stack **a, int *cost_a);
 void		rotate_b_to_pos(t_stack **b, int *cost_b);
 void		shift_stack(t_stack **stack_a);

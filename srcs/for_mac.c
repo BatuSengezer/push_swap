@@ -5,3 +5,8 @@ int	ft_isdigit(int c)
 	return (0);
 }
 
+
+int	ft_issign(char c)
+{
+	return (c == '+' || c == '-');
+}
