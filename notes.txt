@@ -6,7 +6,7 @@ check malloc when there is error
 
 error check
 ./push_swap 0 one 2 3
-ARG="4 67 3 87 23"; ./push_swap $ARG
+ARG="4 67 3 87 23 one"; ./push_swap $ARG
 
 sorted check
 ARG="4 67 3 87 23 5 0"; ./push_swap $ARG | ./checker_Mac $ARG   

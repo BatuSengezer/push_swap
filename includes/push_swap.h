@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:14 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/15 04:57:12 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/15 16:55:33 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,5 @@ long int	ft_atol(const char *str);
 int			find_highest(t_stack *stack);
 int			find_lowest_pos(t_stack **stack);
 int			abs_num(int num);
-
 
 #endif
