@@ -1,15 +1,3 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    Makefile                                           :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/06/01 15:15:02 by bsengeze          #+#    #+#              #
-#    Updated: 2023/06/14 00:50:41 by bsengeze         ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
-
 NAME = push_swap
 CC = cc
 RM = rm -f
@@ -18,9 +6,9 @@ LIBFT_DIR = libft/
 OBJ_DIR = objs/
 SRC_DIR = srcs/
 INCLUDE = -L ./libft -lft
+INCS	= -I ./includes/
 
-SRCS = $(addprefix $(SRC_DIR), \
-		main.c \
+SRC =	main.c \
 		get_stack.c \
 		error_handling.c \
 		utils.c \
@@ -28,25 +16,35 @@ SRCS = $(addprefix $(SRC_DIR), \
 		sort.c \
 		sort_2.c \
 		sort_utils.c \
+		do_best_move.c \
+		do_best_move_utils.c \
 		swap_operations.c \
 		push_operations.c \
 		rotate_operations.c \
 		reverse_rotate_operations.c \
 		for_mac.c \
-		)
 		
 ##remove for_mac.c before eval
+SRCS	= $(addprefix $(SRC_DIR), $(SRC))
 
-OBJS = $(SRCS:.c=.o)
+OBJ		= $(SRC:.c=.o)
+OBJS 	= $(addprefix $(OBJ_DIR), $(OBJ))
+
+all: $(OBJ_DIR) $(NAME) 
+
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+	$(CC) $(FLAGS) -c $< -o $@ $(INCS)
+
+$(OBJ_DIR):
+	mkdir $(OBJ_DIR)
 
 $(NAME): $(OBJS)
 		make -C $(LIBFT_DIR)
 		$(CC) $(FLAGS) $(OBJS) -o $(NAME) $(INCLUDE)
 
-all: $(NAME)
 
 clean:
-		$(RM) $(OBJS) $(NAME)
+		rm -rf $(OBJ_DIR)
 		@cd $(LIBFT_DIR) && $(MAKE) clean
 
 fclean: clean

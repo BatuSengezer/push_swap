@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bsengeze <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/14 22:42:43 by bsengeze          #+#    #+#             */
+/*   Updated: 2023/06/14 23:40:43 by bsengeze         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 // long int atoi to secure conversion of input values that exceeds int limits
@@ -26,46 +38,44 @@ long int	ft_atol(const char *str)
 }
 
 //finds highest int in the list
-int find_highest(t_stack *stack)
+int	find_highest(t_stack *stack)
 {
-	int highest;
-	t_stack *tmp;
+	int		highest;
+	t_stack	*tmp;
 
 	tmp = stack;
 	if (tmp)
 		highest = tmp->val;
-
 	while (tmp && tmp->next)
 	{
 		tmp = tmp->next;
-		if(tmp->val > highest)
+		if (tmp->val > highest)
 			highest = tmp->val;
 	}
-	return(highest);
+	return (highest);
 }
 
-int find_lowest_pos(t_stack **stack)
+int	find_lowest_pos(t_stack **stack)
 {
-	t_stack *tmp;
-	t_stack *tmp_lowest;
+	t_stack	*tmp;
+	t_stack	*tmp_lowest;
 
 	tmp = *stack;
 	if (tmp)
 		tmp_lowest = tmp;
 	while (tmp)
 	{
-		if(tmp->sorted_pos < tmp_lowest->sorted_pos)
+		if (tmp->sorted_pos < tmp_lowest->sorted_pos)
 			tmp_lowest = tmp;
 		tmp = tmp->next;
 	}
-	return(tmp_lowest->pos);
+	return (tmp_lowest->pos);
 }
 
 // takes absolute of a number
-int abs_num(int num)
+int	abs_num(int num)
 {
 	if (num < 0)
 		num = num * -1;
 	return (num);
 }
-
