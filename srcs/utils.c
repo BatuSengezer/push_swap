@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 22:42:43 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/15 04:07:35 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/16 17:36:41 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,6 @@ int	abs_num(int num)
 		num = num * -1;
 	return (num);
 }
-
 
 int	num_str_cmp(const char *s1, const char *s2)
 {

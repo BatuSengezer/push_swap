@@ -6,18 +6,18 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 23:08:31 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/16 02:54:34 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/16 17:43:21 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/push_swap.h"
 
-// If there are bigger sorted_pos in a, makes target_sorted smallest bigger sorted_pos
+// If there are bigger sorted_pos in a, make target_sorted min bigger sorted_pos
 // If there aren't makes the target_sorted pos of smallest sorted_pos in stack_a
-void get_target_pos(t_stack **stack_a, t_stack **stack_b)
+void	get_target_pos(t_stack **stack_a, t_stack **stack_b)
 {
-	t_stack *b;
-	int target_pos;
+	t_stack	*b;
+	int		target_pos;
 
 	b = *stack_b;
 	while (b)
@@ -30,25 +30,25 @@ void get_target_pos(t_stack **stack_a, t_stack **stack_b)
 
 // Find the closest higher value in stack A
 // If no higher value found, find the lowest value in stack A
-int find_target_pos(t_stack *stack_a, t_stack *b)
+int	find_target_pos(t_stack *stack_a, t_stack *b)
 {
-	int target_sorted;
-	int target_pos;
+	int	target_sorted;
+	int	target_pos;
 
 	target_pos = 0;
 	target_sorted = INT_MAX;
-	target_pos = find_closest_higher(stack_a, b, &target_sorted);
-
+	target_pos = closest_higher(stack_a, b, &target_sorted);
 	if (target_sorted == INT_MAX)
-		target_pos = find_lowest_sorted_pos(stack_a, &target_sorted);
+		target_pos = lowest_sorted_pos(stack_a, &target_sorted);
 	return (target_pos);
 }
 
-int find_closest_higher(t_stack *stack_a, t_stack *b, int *target_sorted)
+int	closest_higher(t_stack *stack_a, t_stack *b, int *target_sorted)
 {
-	t_stack *a;
-	int target_pos = 0;
+	t_stack	*a;
+	int		target_pos;
 
+	target_pos = 0;
 	a = stack_a;
 	target_pos = 0;
 	while (a)
@@ -60,17 +60,16 @@ int find_closest_higher(t_stack *stack_a, t_stack *b, int *target_sorted)
 		}
 		a = a->next;
 	}
-	return target_pos;
+	return (target_pos);
 }
 
-int find_lowest_sorted_pos(t_stack *stack_a, int *target_sorted)
+int	lowest_sorted_pos(t_stack *stack_a, int *target_sorted)
 {
-	t_stack *a;
-	int target_pos;
+	t_stack	*a;
+	int		target_pos;
 
 	a = stack_a;
 	target_pos = 0;
-	// Iterate through each element in stack A
 	while (a)
 	{
 		if (a->sorted_pos < *target_sorted)

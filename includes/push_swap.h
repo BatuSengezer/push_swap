@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/01 15:04:14 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/16 02:47:18 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/16 17:54:24 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,9 +57,9 @@ void		sort_three(t_stack **stack_a);
 void		sorted_push_except_three(t_stack **stack_a, t_stack **stack_b);
 void		sort_big(t_stack **stack_a, t_stack **stack_b);
 void		get_target_pos(t_stack **stack_a, t_stack **stack_b);
-int 		find_target_pos(t_stack *stack_a, t_stack *b);
-int 		find_closest_higher(t_stack *stack_a, t_stack *b, int *target_sorted);
-int 		find_lowest_sorted_pos(t_stack *stack_a, int *target_sorted);
+int			find_target_pos(t_stack *stack_a, t_stack *b);
+int			closest_higher(t_stack *stack_a, t_stack *b, int *target_sorted);
+int			lowest_sorted_pos(t_stack *stack_a, int *target_sorted);
 void		get_cost(t_stack **stack_a, t_stack **stack_b);
 void		do_best_move(t_stack **stack_a, t_stack **stack_b);
 void		move_to_a(t_stack **a, t_stack **b, int cost_a, int cost_b);
@@ -80,7 +80,7 @@ void		push_b(t_stack **stack_a, t_stack **stack_b);
 void		rotate(t_stack **stack);
 void		rotate_a(t_stack **stack_a);
 void		rotate_b(t_stack **stack_b);
-void		rotate_ab(t_stack **stack_a,t_stack **stack_b);
+void		rotate_ab(t_stack **stack_a, t_stack **stack_b);
 void		reverse_rotate(t_stack **stack);
 void		reverse_rotate_a(t_stack **stack_a);
 void		reverse_rotate_b(t_stack **stack_b);

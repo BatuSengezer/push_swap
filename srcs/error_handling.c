@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   error_handling.c                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: bsengeze <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/06/16 17:38:09 by bsengeze          #+#    #+#             */
+/*   Updated: 2023/06/16 17:39:26 by bsengeze         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../includes/push_swap.h"
 
 int	num_check(char *av)
@@ -69,14 +81,8 @@ int	is_correct_input(char **av)
 	return (1);
 }
 
-
-
-void write_error(void)
+void	write_error(void)
 {
-    write(2, "Error\n", 6);
-    exit(1);
+	write(2, "Error\n", 6);
+	exit(1);
 }
-
-
-
-

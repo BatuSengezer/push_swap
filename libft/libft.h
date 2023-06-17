@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/12 18:55:27 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/03/16 17:40:54 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/06/16 17:34:36 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 int		ft_isalpha(int c);
 int		ft_isdigit(int c);
-int	    ft_issign(char c);
+int		ft_issign(char c);
 int		ft_isalnum(int c);
 int		ft_isascii(int c);
 int		ft_isprint(int c);
