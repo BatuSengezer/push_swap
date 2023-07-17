@@ -31,8 +31,6 @@ typedef struct stack
 	struct stack	*next;
 }	t_stack;
 
-int			main(int ac, char **av);
-
 //list operations
 t_stack		*fill_stack_a(int ac, char **av);
 t_stack		*create_node(int position, int value);
