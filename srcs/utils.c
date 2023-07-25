@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 22:42:43 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/16 17:36:41 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/07/25 18:42:42 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,6 +97,10 @@ int	num_str_cmp(const char *s1, const char *s2)
 		if (s2[j] == '+')
 			j++;
 	}
+	while (s1[i] == '0')
+		i++;
+	while (s2[j] == '0')
+		j++;
 	while (s1[i] != '\0' && s2[j] != '\0' && s1[i] == s2[j])
 	{
 		i++;
