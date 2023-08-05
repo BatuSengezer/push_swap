@@ -6,7 +6,7 @@
 /*   By: bsengeze <bsengeze@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/14 23:08:31 by bsengeze          #+#    #+#             */
-/*   Updated: 2023/06/16 17:43:21 by bsengeze         ###   ########.fr       */
+/*   Updated: 2023/08/05 22:05:41 by bsengeze         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ int	find_target_pos(t_stack *stack_a, t_stack *b)
 	int	target_sorted;
 	int	target_pos;
 
-	target_pos = 0;
 	target_sorted = INT_MAX;
 	target_pos = closest_higher(stack_a, b, &target_sorted);
 	if (target_sorted == INT_MAX)
@@ -48,7 +47,6 @@ int	closest_higher(t_stack *stack_a, t_stack *b, int *target_sorted)
 	t_stack	*a;
 	int		target_pos;
 
-	target_pos = 0;
 	a = stack_a;
 	target_pos = 0;
 	while (a)
