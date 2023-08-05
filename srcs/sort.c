@@ -63,7 +63,7 @@ void	sorted_push_except_three(t_stack **s_a, t_stack **s_b)
 	}
 }
 
-// add doubles rr rrr ss by comparinh stack a b and their next
+// add doubles rr rrr ss by comparing stack a b and their next
 void	sort_big(t_stack **stack_a, t_stack **stack_b)
 {
 	sorted_push_except_three(stack_a, stack_b);
