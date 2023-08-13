@@ -1,7 +1,7 @@
 # push_swap
 A sorting algorithm that uses two stacks and given operations to sort the stack with least amount of operations.
 
-## Rules:\
+## Rules: \
 We have 2 stacks named a and b.\
 • At the beginning: \
   ◦ The stack a contains a random amount of negative and/or positive numbers\
