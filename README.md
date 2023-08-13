@@ -18,3 +18,10 @@ $~~~~~$◦ rr : ra and rb at the same time.\
 $~~~~~$◦ rra (reverse rotate a): Shift down all elements of stack a by 1. The last element becomes the first one.\
 $~~~~~$◦ rrb (reverse rotate b): Shift down all elements of stack b by 1. The last element becomes the first one.\
 $~~~~~$◦ rrr : rra and rrb at the same time.
+
+### You can run it as:
+```zsh
+# terminal
+make && ./push_swap 2 1 3 6 5 8
+```
+The program prints operations done in order and sorts given numbers in ascending order.
